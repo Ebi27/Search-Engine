@@ -9,3 +9,16 @@ const client = new Client({
 });
  client.connect();
 
+const app = express();
+
+app.use(express.json());
+
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+
+app.listen(port, () => {
+  console.log(`App running on port ${port}.`);
+});
